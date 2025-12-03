@@ -2,9 +2,8 @@
 
 Required: .NET 10 SDK and SQL Server.
 
-1. Install SQL Server and update `appsettings.json` with the correct `ConnectionStrings.DefaultConnection`, `SourceCsvPath`, and `DuplicatesOutputPath` (two last ones can be kept as default if using straight out of repo).
-2. Keep `TruncateBeforeLoad` at `true` to fully refresh `dbo.CabTrips` on each run, and set it to `false` only if you want to append to existing data yourself.
-3. Run `dotnet run --configuration Release`.
+1. Install/Use SQL Server and update `appsettings.json` with the correct `ConnectionStrings.DefaultConnection`, `SourceCsvPath`, and `DuplicatesOutputPath` (two last ones can be kept as default if using straight out of repo).
+2. Run `dotnet run --configuration Release`.
 
 Current version of the app creates the database/table/indexes if needed, bulk-inserts in 5k batches, and reports totals when finished.
 The last project run on the supplied sample csv produced 29.818 rows in `dbo.CabTrips` and wrote around 15 duplicate rows to `duplicates.csv`.
